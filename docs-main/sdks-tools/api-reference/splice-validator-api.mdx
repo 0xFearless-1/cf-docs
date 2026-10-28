@@ -128,7 +128,7 @@ For the common case of wanting to set up an external party in a topology where t
 > 1.  Use `/v0/admin/external-party/topology/*` to set up an external party
 > 2.  Use `/v0/admin/external-party/setup-proposal` to start setting up a `Splice.Wallet.TransferPreapproval` daml contract for the external party, which allows the party to send and receive Canton Coin without having to approve individual transfer offers.
 > 3.  Use `/v0/admin/external-party/setup-proposal/*` to finish setting up the transfer preapproval.
-> 4.  Use `/v0/admin/external-party/transfer-preapproval/*` to send Canton Coin to other parties.
+> 4.  Use the [Token Standard APIs](/appdev/deep-dives/token-standard) to send Canton Coin to other parties.
 > 5.  Use `/v0/admin/external-party/balance` to check the balance of the external party.
 
 **Authorization:** Authentication with any valid JWT token as described in [app-auth](/sdks-tools/api-reference/splice-http-apis).
@@ -148,8 +148,6 @@ For the common case of wanting to set up an external party in a topology where t
 | **GET** /v0/admin/transfer-preapprovals                              |
 | **GET** /v0/admin/transfer-preapprovals/by-party/`{receiver-party}`    |
 | **DELETE** /v0/admin/transfer-preapprovals/by-party/`{receiver-party}` |
-| **POST** /v0/admin/external-party/transfer-preapproval/prepare-send  |
-| **POST** /v0/admin/external-party/transfer-preapproval/submit-send   |
 | **GET** /v0/admin/external-party/balance                             |
 
 ## User management API
@@ -185,7 +183,6 @@ These endpoints are used by validator and supervalidator operators to manage the
 |---------------------------------------------------------------|
 | **GET** /v0/admin/participant/identities                      |
 | **GET** /v0/admin/participant/global-domain-connection-config |
-| **GET** /v0/admin/domain/data-snapshot                        |
 
 ## ANS API
 
